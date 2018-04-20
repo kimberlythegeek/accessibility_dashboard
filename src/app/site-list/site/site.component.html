@@ -1,0 +1,16 @@
+<li>
+    <div class="col-xs-2">{{ site.name }}</div>
+    <div class="col-xs-4"><a [href]="site.url">visit site</a> </div>
+    <div class="col-xs-12 well">
+        Last updated: {{ site.data.last_updated }}
+        <div class="container">
+            <div class="row">
+                <li *ngFor="let violation of site.data.violations">
+                    <div class="col-xs-12">{{ violation.id }}</div>
+                    <div class="col-xs-12">{{ violation.description }}</div>
+                    <div class="col-xs-12">{{ violation.impact }}</div>
+                </li>
+            </div>
+        </div>
+    </div>
+</li>
