@@ -1,0 +1,26 @@
+[
+  {
+      "name": "mdn",
+      "url": "https://developer.mozilla.org"
+  },
+  {
+      "name": "mozilla",
+      "url": "https://www.mozilla.com"
+  },
+  {
+      "name": "addons",
+      "url": "https://addons.mozilla.com"
+  },
+  {
+      "name": "mozillians",
+      "url": "https://mozillians.org"
+  },
+  {
+      "name": "bugzilla",
+      "url": "https://bugzilla.mozilla.org"
+  },
+  {
+      "name": "pocket",
+      "url": "https://getpocket.com"
+  }
+]
