@@ -11,7 +11,7 @@ export class SiteDataService {
   constructor(private httpClient: HttpClient) { }
 
   public async getSiteList(): Promise<any> {
-    const response = await this.httpClient.get(this.siteListURL).toPromise();
+    let response = await this.httpClient.get(this.siteListURL).toPromise();
     return response;
   }
 

@@ -5,7 +5,7 @@
         Last updated: {{ site.data.last_updated }}
         <div class="container">
             <div class="row">
-                <li *ngFor="let violation of site.data.violations">
+                <li *ngFor="let violation of site.data['violations']">
                     <div class="col-xs-12">{{ violation.id }}</div>
                     <div class="col-xs-12">{{ violation.description }}</div>
                     <div class="col-xs-12">{{ violation.impact }}</div>

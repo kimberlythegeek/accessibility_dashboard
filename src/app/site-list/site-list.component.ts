@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Site } from '../assets/site.model';
+import { Site } from '../models/site.model';
 import { SiteDataService } from '../site-data.service';
 
 @Component({
@@ -33,19 +33,15 @@ export class SiteListComponent implements OnInit {
       .then(_ => {
         let sites = [];
         this.siteList.forEach(element => {
-          console.log(element);
           this.siteDataService.getSiteData(element['name'])
             .subscribe((results) => {
               let data = results;
-              console.log(results);
               let site = new Site(element['name'], element['url'], data);
               sites.push(site);
             });
         })
         this.sites = sites;
       });
-
-    console.log(this.sites);
   }
 
   onSelect(site: Site): void {

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Site } from '../../assets/site.model';
+import { Site } from '../../models/site.model';
 
 @Component({
   selector: 'app-site',
