@@ -1,0 +1,19 @@
+<li class="list-group-item">
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-8">Rule Violated: {{ violation.id }}</div>
+        <div class="col-xs-4">
+          <span class="label pull-right"
+            [class.label-primary]="violation.impact === 'minor'"
+            [class.label-success]="violation.impact === 'moderate'"
+            [class.label-warning]="violation.impact === 'serious'"
+            [class.label-danger]="violation.impact === 'critical'">
+            {{ violation.impact }}
+          </span>
+        </div>
+        <div class="col-xs-12">Description: {{ violation.description }}</div>
+        <div class="col-xs-12">Message: {{ violation.help }}</div>
+        <div class="col-xs-12">Message: {{ violation.help }}</div>
+      </div>
+    </div>
+</li>

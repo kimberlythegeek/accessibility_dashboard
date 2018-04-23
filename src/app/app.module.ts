@@ -6,8 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SiteListComponent } from './site-list/site-list.component';
 import { SiteComponent } from './site-list/site/site.component';
-import { SiteDetailComponent } from './site-list/site/site-detail/site-detail.component';
 import { SiteDataService } from './site-data.service';
+import { ViolationComponent } from './site-list/site/violation/violation.component';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { SiteDataService } from './site-data.service';
     AppComponent,
     SiteListComponent,
     SiteComponent,
-    SiteDetailComponent,
+    ViolationComponent,
   ],
   imports: [
     BrowserModule,

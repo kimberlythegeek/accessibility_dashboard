@@ -13,16 +13,10 @@ export class SiteListComponent implements OnInit {
   sites: Site[];
   selectedSite: Site;
 
-  constructor(private siteDataService: SiteDataService) {
-
-  }
+  constructor(private siteDataService: SiteDataService) {}
 
   ngOnInit() {
     this.getSiteData();
-  }
-  
-  getSiteList(): void {
-
   }
 
   async getSiteData() {
@@ -42,10 +36,6 @@ export class SiteListComponent implements OnInit {
         })
         this.sites = sites;
       });
-  }
-
-  onSelect(site: Site): void {
-    this.selectedSite = site;
   }
 
 }

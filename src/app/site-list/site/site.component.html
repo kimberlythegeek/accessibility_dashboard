@@ -1,15 +1,21 @@
-<li>
-    <div class="col-xs-2">{{ site.name }}</div>
-    <div class="col-xs-4"><a [href]="site.url">visit site</a> </div>
-    <div class="col-xs-12 well">
-        Last updated: {{ site.data.last_updated }}
-        <div class="container">
-            <div class="row">
-                <li *ngFor="let violation of site.data['violations']">
-                    <div class="col-xs-12">{{ violation.id }}</div>
-                    <div class="col-xs-12">{{ violation.description }}</div>
-                    <div class="col-xs-12">{{ violation.impact }}</div>
-                </li>
+<li (click)="toggle()" class="site-element list-group-item">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2">{{ site.name }}</div>
+            <div class="col-xs-4"><a [href]="site.url">visit site</a> </div>
+            <div class="col-xs-2">
+                <span class="label" [ngClass]="siteStatus(site)">{{ site.data['violations'].length }}</span>
+            </div>
+        </div>
+        <div *ngIf="show" class="row">
+            <div class="col-xs-12 well">
+                Last updated: {{ site.data.last_updated }}
+                <ul class="list-unstyled list-group">
+                    <app-violation 
+                        *ngFor="let violation of site.data['violations']" 
+                        [violation]="violation">
+                    </app-violation>
+                </ul>
             </div>
         </div>
     </div>
