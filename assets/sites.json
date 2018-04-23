@@ -22,5 +22,45 @@
   {
       "name": "pocket",
       "url": "https://getpocket.com"
+  },
+  {
+    "name": "wiki",
+    "url": "https://wiki.mozilla.org"
+  },
+  {
+    "name": "support",
+    "url": "https://support.mozilla.org"
+  },
+  {
+    "name": "careers",
+    "url": "https://careers.mozilla.org"
+  },
+  {
+    "name": "hacks",
+    "url": "https://hacks.mozilla.org"
+  },
+  {
+    "name": "mail",
+    "url": "https://mail.mozilla.org"
+  },
+  {
+    "name": "pastebin",
+    "url": "https://pastebin.mozilla.org"
+  },
+  {
+    "name": "quality",
+    "url": "https://quality.mozilla.org"
+  },
+  {
+    "name": "whatcanido",
+    "url": "https://whatcanidoformozilla.org"
+  },
+  {
+    "name": "crash-stats",
+    "url": "https://crash-stats.mozilla.com"
+  },
+  {
+    "name": "accessibility-report",
+    "url": "https://kimberlythegeek.github.io/accessibility_dashboard"
   }
 ]
