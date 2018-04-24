@@ -1,22 +1,26 @@
 <li (click)="toggle()" class="site-element list-group-item">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-2">{{ site.name }}</div>
-            <div class="col-xs-4"><a [href]="site.url">visit site</a> </div>
-            <div class="col-xs-2">
-                <span class="label" [ngClass]="siteStatus(site)">{{ site.data['violations'].length }}</span>
+        <div class="row justify-content-start">
+            <div class="col-10">{{ site.url | slice:8 }}</div>
+            <div class="col-1">
+                <span class="badge" [ngClass]="siteStatus(site)">{{ site.data['violations'].length }}</span>
+            </div>
+            <div class="col-1">
+              <a [href]="site.url">
+                  <i class="fa fa-external-link" aria-hidden="true"></i>
+              </a>
             </div>
         </div>
-        <div *ngIf="show" class="row">
-            <div class="col-xs-12 well">
-                Last updated: {{ site.data.last_updated }}
+        <div class="row">
+            <div *ngIf="show" class="col-12">
                 <ul class="list-unstyled list-group">
                     <app-violation 
                         *ngFor="let violation of site.data['violations']" 
                         [violation]="violation">
                     </app-violation>
                 </ul>
-            </div>
+                <small class="text-muted">Last updated {{ site.data.last_updated | timeAgo }}</small>
+              </div>
         </div>
     </div>
 </li>

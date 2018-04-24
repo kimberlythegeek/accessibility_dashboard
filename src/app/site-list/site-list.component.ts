@@ -29,6 +29,7 @@ export class SiteListComponent implements OnInit {
         this.siteList.forEach(element => {
           this.siteDataService.getSiteData(element['name'])
             .subscribe((results) => {
+              results['last_updated'] = this.convertDate(results['last_updated']);
               let data = results;
               let site = new Site(element['name'], element['url'], data);
               sites.push(site);
@@ -36,6 +37,10 @@ export class SiteListComponent implements OnInit {
         })
         this.sites = sites;
       });
+  }
+
+  convertDate(pythonDate){
+    return new Date(pythonDate * 1000);
   }
 
 }

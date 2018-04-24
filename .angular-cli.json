@@ -7,7 +7,6 @@
     {
       "root": "src",
       "outDir": "dist",
-      "baseHref": "/ng-test-deploy",
       "assets": [
         "assets",
         "favicon.ico"
@@ -21,7 +20,8 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -16,7 +16,7 @@ export class SiteComponent {
 
   siteStatus(site): string {
     let violations = site.data.violations;
-    if (violations.length == 0) { return 'label-info'; }
+    if (violations.length == 0) { return 'badge-info'; }
     let counter = {
       'critical': 0,
       'serious': 0,
@@ -32,9 +32,9 @@ export class SiteComponent {
                 5 * counter['moderate'] +
                 1 * counter['minor'];
     score = (score >= 100) ? 100 : score;
-    if (score >= 60) { return 'label-danger'; }
-    else if (score < 60 && score >= 20) { return 'label-warning'; }
-    else { return 'label-success'; }
+    if (score >= 60) { return 'badge-danger'; }
+    else if (score < 60 && score >= 20) { return 'badge-warning'; }
+    else { return 'badge-success'; }
   }
 
   toggle(): void {
