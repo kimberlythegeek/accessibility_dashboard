@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 export class SiteDataService {
 
   siteListURL = '../assets/sites.json';
-  siteDataURL = 'http://138.68.58.251:5000/';
+  siteDataURL = 'https://webaccessibility.rocks/';
 
   constructor(private httpClient: HttpClient) { }
 
