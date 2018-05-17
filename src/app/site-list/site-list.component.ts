@@ -29,7 +29,7 @@ export class SiteListComponent implements OnInit {
         this.siteList.forEach(element => {
           this.siteDataService.getSiteData(element['name'])
             .subscribe((results) => {
-              let current = results[0]
+              let current = results[results.length - 1]
               current['last_updated'] = this.convertDate(current['last_updated']);
               let data = current;
               let site = new Site(element['name'], element['url'], data);
