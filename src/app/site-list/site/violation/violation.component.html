@@ -1,19 +1,47 @@
 <li class="list-group-item">
   <div class="container-fluid">
       <div class="row">
-        <div class="col-8">Rule Violated: {{ violation.id }}</div>
-        <div class="col-4">
-          <span class="badge pull-right"
-            [class.badge-primary]="violation.impact === 'minor'"
-            [class.badge-success]="violation.impact === 'moderate'"
-            [class.badge-warning]="violation.impact === 'serious'"
-            [class.badge-danger]="violation.impact === 'critical'">
+        <div class="col-10">
+          <h6>{{ violation.help }} <span class="small"><a href="{{violation.helpUrl}}">More Info</a></span></h6>
+          
+        </div>
+        <div class="col-2">
+          <span class="moz-badge pull-right"
+            [class.moz-success]="violation.impact === 'minor'"
+            [class.moz-warning]="violation.impact === 'moderate'"
+            [class.moz-serious]="violation.impact === 'serious'"
+            [class.moz-danger]="violation.impact === 'critical'">
             {{ violation.impact }}
           </span>
         </div>
-        <div class="col-xs-12">Description: {{ violation.description }}</div>
-        <div class="col-xs-12">Message: {{ violation.help }}</div>
-        <div class="col-xs-12">Message: {{ violation.help }}</div>
       </div>
+        
+        <div class="row"><div class="col-12">{{ violation.nodes.length }} element(s) affected.</div></div>
+        <div class="row justify-content-center">
+            <button 
+              *ngIf="!show"
+              (click)="show = !show" 
+              tabindex="0" 
+              name="click to expand"
+              type="button"
+              class="btn btn-info btn-sm node-drop-down">Show Affected Element(s)
+           </button>
+            <button 
+              *ngIf="show"
+              (click)="show = !show" 
+              tabindex="0" 
+              name="click to hide" 
+              type="button"
+              class="btn btn-info btn-sm node-drop-down">Hide Affected Element(s)
+            </button>
+        </div>
+        <div *ngIf="show" class="row">
+          <app-node 
+            *ngFor="let node of violation.nodes" 
+            [node]="node"
+            class="col-12">
+          </app-node>
+        </div>
+        
     </div>
 </li>

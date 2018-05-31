@@ -1,0 +1,26 @@
+@import 'photon-colors';
+
+a:hover, a:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: $blue-50;
+}
+
+.moz-success {
+  color: $green-90;
+  background-color: $green-50;
+}
+.moz-warning {
+  color: $yellow-90;
+  background-color: $yellow-50;
+}
+.moz-serious {
+  color: $orange-90;
+  background-color: $orange-50;
+}
+.moz-danger {
+  color: white;
+  background-color: $red-50;
+}
+
+

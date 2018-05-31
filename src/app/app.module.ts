@@ -8,6 +8,9 @@ import { SiteListComponent } from './site-list/site-list.component';
 import { SiteComponent } from './site-list/site/site.component';
 import { SiteDataService } from './site-data.service';
 import { ViolationComponent } from './site-list/site/violation/violation.component';
+import { GraphComponent } from './site-list/site/graph/graph.component';
+import { HeaderComponent } from './header/header.component';
+import { NodeComponent } from './site-list/site/violation/node/node.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { ViolationComponent } from './site-list/site/violation/violation.compone
     SiteListComponent,
     SiteComponent,
     ViolationComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    GraphComponent,
+    HeaderComponent,
+    NodeComponent
   ],
   imports: [
     BrowserModule,

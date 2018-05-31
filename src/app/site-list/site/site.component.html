@@ -1,18 +1,38 @@
-<li (click)="toggle()" class="site-element list-group-item">
+<li class="site-element list-group-item">
     <div class="container-fluid">
         <div class="row justify-content-start">
-            <div class="col-10">{{ site.url | slice:8 }}</div>
             <div class="col-1">
-                <span class="badge" [ngClass]="siteStatus(site)">{{ site.data['violations'].length }}</span>
+                <span 
+                    *ngIf="!show"
+                    (click)="show = !show" 
+                    tabindex="0" 
+                    role="button" 
+                    class="fa fa-caret-right site-drop-down">
+                    <span style="font-size:0px;">Click to Show Violations</span>
+                </span>
+                <span 
+                    *ngIf="show"
+                    (click)="show = !show" 
+                    tabindex="0" 
+                    role="button" 
+                    class="fa fa-caret-down site-drop-down">
+                    <span style="font-size:0px;">Click to Hide Violations</span>
+                </span>
+            </div>
+            <div class="col-9">{{ site.url | slice:8 }}</div>
+            <div class="col-1">
+                <div class="moz-badge" [ngClass]="siteStatus(site)">{{ site.data['violations'].length }}</div>
             </div>
             <div class="col-1">
-              <a [href]="site.url">
-                  <i class="fa fa-external-link" aria-hidden="true"></i>
+              <a [href]="site.url" title="visit site">
+                  <span style="font-size:0px;">Visit Site</span>
+                  <i title="visit site" class="fa fa-external-link" aria-hidden="true"></i>
               </a>
             </div>
         </div>
         <div class="row">
             <div *ngIf="show" class="col-12">
+                <!-- <app-graph></app-graph> -->
                 <ul class="list-unstyled list-group">
                     <app-violation 
                         *ngFor="let violation of site.data['violations']" 

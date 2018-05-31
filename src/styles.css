@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+body app-root {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+li:focus, a:focus, span:focus  {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: Highlight;
+}
+
+.moz-badge {
+  display: inline-block;
+  padding: .2em .4em .2em .45em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
+
+.site-drop-down {
+  cursor: pointer;
+}

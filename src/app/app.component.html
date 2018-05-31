@@ -1,7 +1,17 @@
 <div class="container">
+  <div class="row">
+    <div class="col-12">
+        <app-header></app-header>
+    </div>
+  </div>
   <div class="row justify-content-center">
     <div class="col-10">
       <h1 class="text-center">{{ title | titlecase }}</h1>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          Current accessibility status of Mozilla's web properties. The number reflects the total count of accessibility violations found.
+        </div>
+      </div>
     </div>
   </div>
   <app-site-list></app-site-list>

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-12">
+            <strong>html</strong>  <code>{{ node.html }}</code>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item" *ngFor="let target of node.target">
+        <div class="row">
+          <div class="col-12">
+            <strong>target</strong> <code>{{ node.target }}</code>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <strong>message</strong>
+        <div class="alert alert-warning" [innerHTML]="node.failureSummary"></div>
+      </li>
+    </ul>
+  </div>
+</div>
