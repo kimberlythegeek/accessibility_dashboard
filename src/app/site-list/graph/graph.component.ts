@@ -22,7 +22,6 @@ export class GraphComponent implements AfterViewInit {
   ngAfterViewInit() {
     let xAxes = [];
     const series = [];
-    console.log(this.sites);
     this.sites.forEach(site => {
       const violations = [];
       const dates = [];
@@ -37,7 +36,6 @@ export class GraphComponent implements AfterViewInit {
         data: violations
       });
     });
-    console.log(xAxes);
     Highcharts.chart('graph', {
       title: {
         text: 'Mozilla\'s Web Accessibility Status'
