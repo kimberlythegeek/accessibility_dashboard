@@ -1,10 +1,11 @@
 <div class="row justify-content-center">
   <div class="col-10">
-      <ul class="list-unstyled list-group">
-        <app-site 
-          *ngFor="let site of sites" 
-          [site]="site">
-        </app-site>
+    <ul class="list-unstyled list-group">
+      <app-graph *ngIf="sites.length==8" [sites]="sites"></app-graph>
+      <app-site 
+        *ngFor="let site of sites"
+        [site]="site">
+      </app-site>
       </ul>
   </div>
 </div>

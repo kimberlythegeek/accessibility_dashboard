@@ -13,12 +13,12 @@ export class SiteDataService {
   constructor(private http: HttpClient) { }
 
   public async getSiteList(): Promise<any> {
-    let response = await this.http.get(this.siteListURL).toPromise();
+    const response = await this.http.get(this.siteListURL).toPromise();
     return response;
   }
 
   public getSiteData(siteList): Observable<any> {
-    let sites = [];
+    const sites = [];
     return new Observable(observer => {
       if (this._siteData) {
         observer.next(this._siteData);
@@ -28,10 +28,10 @@ export class SiteDataService {
         this.http
           .get(this.siteDataURL + element['name'])
           .subscribe((results: Array<any>) => {
-            let current = results[results.length - 1];
+            const current = results[results.length - 1];
             current['last_updated'] = this.convertDate(current['last_updated']);
-            let data = current;
-            let site = new Site(element['name'], element['url'], data, results);
+            const data = current;
+            const site = new Site(element['name'], element['url'], data, results);
             sites.push(site);
           });
         });
@@ -41,7 +41,7 @@ export class SiteDataService {
     });
   }
 
-  convertDate(pythonDate){
+  convertDate(pythonDate) {
     return new Date(pythonDate * 1000);
   }
 

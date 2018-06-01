@@ -19,20 +19,18 @@
                     <span style="font-size:0px;">Click to Hide Violations</span>
                 </span>
             </div>
-            <div class="col-9">{{ site.url | slice:8 }}</div>
+                <div class="col-9">{{ site.url | slice:8 }}</div>
             <div class="col-1">
                 <div class="moz-badge" [ngClass]="siteStatus(site)">{{ site.data['violations'].length }}</div>
             </div>
             <div class="col-1">
               <a [href]="site.url" title="visit site">
-                  <span style="font-size:0px;">Visit Site</span>
-                  <i title="visit site" class="fa fa-external-link" aria-hidden="true"></i>
+                  <span style="font-size:0px;">Visit Site</span><i title="visit site" class="fa fa-external-link" aria-hidden="true"></i>
               </a>
             </div>
         </div>
         <div class="row">
             <div *ngIf="show" class="col-12">
-                <!-- <app-graph></app-graph> -->
                 <ul class="list-unstyled list-group">
                     <app-violation 
                         *ngFor="let violation of site.data['violations']" 

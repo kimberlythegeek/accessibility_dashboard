@@ -14,7 +14,6 @@ export class SiteComponent implements AfterViewInit {
   history: Object[];
 
   ngAfterViewInit() {
-    this.history = this.site['history'];
   }
 
 

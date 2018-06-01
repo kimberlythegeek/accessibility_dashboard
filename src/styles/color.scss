@@ -1,9 +1,20 @@
 @import 'photon-colors';
 
-a:hover, a:focus,
+.navbar-light .navbar-nav .nav-link {
+  color: $blue-60;
+}
+
+a,
+span[role=button],
+.navbar-light .navbar-nav .nav-link {
+  border: 3px solid transparent;
+  padding: 2px;
+}
+
+a:hover,
 .navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus {
-  color: $blue-50;
+span[role=button]:hover {
+  border: 3px dotted $blue-60;
 }
 
 .moz-success {
