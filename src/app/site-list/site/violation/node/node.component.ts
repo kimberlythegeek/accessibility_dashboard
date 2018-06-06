@@ -13,7 +13,7 @@ export class NodeComponent implements OnInit {
    }
 
    ngOnInit() {
-    this.node['failureSummary'] = this.node['failureSummary'].replace('\n', '<br>');
+    this.node['failureSummary'] = this.node['failureSummary'].replace(/\n/g, '<br>');
    }
 
 }
